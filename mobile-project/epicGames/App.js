@@ -9,30 +9,50 @@ export default function App() {
         source={require('./src/assets/image/epic.png')}
       />
       <Text
-        style={styles.Titulo}
+        style={styles.titulo}
       >
         Login
       </Text>
-      <View>
-        <Text 
-          style={styles.rotulo}
-        >Email</Text> 
-        <TextInput
-          style={styles.input}
-          defaultValue='Email'
+      <View
+        style={styles.containerInputs}
+      >
+        <View
+          style={styles.containerInput}
         >
-        </TextInput>
-      </View>
-      <View>
-        <Text 
-          style={styles.rotulo}
-        >Senha</Text> 
-        <TextInput
-          style={styles.input}
-          defaultValue='Senha'
+          {/* <Text
+            style={styles.rotulo}
+          >Email</Text> */}
+          <TextInput
+            style={styles.input}
+            placeholder='Email'
+          >
+          </TextInput>
+        </View>
+
+        <View
+          style={styles.containerInput}
         >
-        </TextInput>
+          {/* <Text
+            style={styles.rotulo}
+          >Senha</Text> */}
+          <TextInput
+            secureTextEntry={true}
+            style={styles.input}
+            placeholder='Senha'
+          >
+          </TextInput>
+        </View>
       </View>
+
+      <TouchableOpacity 
+        style={styles.btn}
+      >
+        <Text 
+          style={styles.textBtn}
+        >
+          Entrar
+        </Text>
+      </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
   );
@@ -44,18 +64,45 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    gap:38,
+    padding: 18,
   },
-  logo:{
+  logo: {
     width: 116,
     height: 132,
   },
-  titulo:{
-
+  titulo: {
+    fontSize: 36,
+    textShadowColor:  '#000',
+    textShadowOffset: {width:2,height:2},
+    textShadowRadius: 6.2
   },
-  rotulo:{
-
+  rotulo: {
+    fontSize: 16
   },
-  input:{
-
+  input: {
+    backgroundColor: '#818181',
+    color: 'white',
+    borderRadius: 45,
+    padding: 16,
+    textAlign: 'center',
   },
+  containerInput: {
+    gap: 10
+  },
+  containerInputs:{
+    gap:10,
+    width: '100%',
+    maxWidth: 450
+  },
+  btn:{
+    backgroundColor: 'black',
+    padding: 16,
+    borderRadius: 17,
+    
+  },
+  textBtn:{
+    color: 'white',
+    
+  }
 });
