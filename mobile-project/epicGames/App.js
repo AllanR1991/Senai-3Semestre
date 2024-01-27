@@ -1,7 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import {
   Image,
-  Pressable,
   StyleSheet,
   Text,
   TextInput,
