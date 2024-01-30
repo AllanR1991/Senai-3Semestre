@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { TextoBotao } from "./Label/Label";
 
 export const Botao = styled.TouchableOpacity`
   justify-content: center;
