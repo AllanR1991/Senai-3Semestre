@@ -1,25 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
 import { Container } from './src/components/Container/Container';
-import * as Font from 'expo-font'
 import { Titulo } from './src/components/Title/Title';
+import { Botao, Botao2 } from './src/components/Button/Button';
+import { useFonts, BlackOpsOne_400Regular } from '@expo-google-fonts/black-ops-one';
+import { Lobster_400Regular } from '@expo-google-fonts/lobster';
+import { TextoBotao, TextoBotao2 } from './src/components/Button/Label/Label';
+
 
 
 export default function App() {
-  const [fontsLoaded, setFontsLoaded] = useState(false);
 
-  const loadFonts = async () => {
-    await Font.loadAsync({
-      'black-ops-one': require('@expo-google-fonts/black-ops-one'),
-      'lobster': require('@expo-google-fonts/lobster'),
-    });
-    setFontsLoaded(true);
-  };
-
-  useEffect(() => {
-    loadFonts();
-  }, []);
+  
 
   //Hook
   const[count, setCount] = useState(0);
@@ -38,17 +30,27 @@ export default function App() {
   useEffect(() => {
     //Warn funciona apenas no mobile no web fazemos apenas com console.
     console.warn(`Contador atualizado: ${count}`)}, [count]);
+
   
+    let [fontsLoaded, fontError] = useFonts({
+      Lobster_400Regular,
+      BlackOpsOne_400Regular
+    });
+  
+    if (!fontsLoaded && !fontError) {
+      return null;
+    }
+
 
   return (
     <Container>      
       <Titulo>Contador : {count}</Titulo>
-      <TouchableOpacity onPress={increment}>
-        <Text>Incrementar</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={decrement}>
-        <Text>Decrementar</Text>
-      </TouchableOpacity>
+      <Botao onPress={increment}>
+        <TextoBotao>Incrementar</TextoBotao>
+      </Botao>
+      <Botao2 onPress={decrement}>
+        <TextoBotao2>Decrementar</TextoBotao2>
+      </Botao2>
       <StatusBar/>
     </Container>
   );
