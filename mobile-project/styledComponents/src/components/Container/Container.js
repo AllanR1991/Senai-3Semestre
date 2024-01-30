@@ -6,4 +6,5 @@ export const Container = styled.View`
   align-items: center;
   gap: 10;
   background-color: #FFF;
+  font-family: "losbter"
 `
