@@ -6,20 +6,22 @@ export const Input = ({
   fieldValue,
   onChangeText,
   keyType,
-  maxLenght,
-  minLenght,
-  keyboardType
+  maxLength,
+  minLength,
+  keyboardType,
+  onBlur
 }) => {
   return(
     <InputText
       placeholder={placeholder}
       editable={editable}
-      fieldValue={fieldValue}
+      value={fieldValue}
       onChangeText={onChangeText}
       keyType={keyType}
-      maxLenght={maxLenght}
-      minLenght={minLenght}
+      maxLength={maxLength}
+      minLength={minLength}
       keyboardType={keyboardType}
+      onBlur={onBlur}
     />
   );
 };
