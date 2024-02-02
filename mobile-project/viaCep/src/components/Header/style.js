@@ -1,15 +1,15 @@
-import styled from "styled-components";
+import styled from "styled-components/native";
 
 export const HeaderContainer = styled.View`
   width: 100%;
   height: 20%;
   background-color: #FECC2B;
   border-radius: 0 0 15px 15px;
-  //box-shadow: 10px 10px 15px #00000030;
-  shadow-color: red;
-  shadow-offset: 20px 40px;
-  shadow-opacity: 0.70;
-  elevation: 5;
+  box-shadow: 0px 4px 15px black;
+  shadow-color: black;
+  shadow-offset:  0px 4px;
+  shadow-opacity: 0.75;  
+  elevation: 2;
 
 
   justify-content: center;

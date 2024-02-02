@@ -18,10 +18,45 @@ export function Home () {
         <BoxInput
           textLabel="Informe o cep"
           placeholder="Exemplo"
-          filedWidth= {100}
           editable= {true}
           maxLenght= {9}
           minLenght= {8}
+        />
+        <BoxInput
+          textLabel="Logradouro"
+          placeholder="Logradouro..."                 
+          maxLenght= {50}
+          minLenght= {0}
+        />
+        <BoxInput
+          textLabel="Bairro"
+          placeholder="Bairro..."          
+          maxLenght= {50}
+          minLenght= {0}
+        />
+        <BoxInput
+          textLabel="Cidade"
+          placeholder="Cidade..."
+          maxLenght= {50}
+          minLenght= {0}
+        />
+        <BoxInput
+          textLabel="Cidade"
+          placeholder="Cidade..."
+          maxLenght= {50}
+          minLenght= {0}
+        />
+        <BoxInput
+          textLabel="Cidade"
+          placeholder="Cidade..."
+          maxLenght= {50}
+          minLenght= {0}
+        />
+        <BoxInput
+          textLabel="Cidade"
+          placeholder="Cidade..."
+          maxLenght= {50}
+          minLenght= {0}
         />
       </ContainerForm>
     </ScrollForm>

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/native";
 
 export const InputText = styled.TextInput`
   background-color: #F6F6F6;
