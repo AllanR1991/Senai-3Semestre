@@ -26,4 +26,5 @@ export const ContainerForm = styled.SafeAreaView`
   width:75%;
   /* height:30px; */
   /* background-color:gray; */
+  gap:10px;
 `

@@ -1,6 +1,8 @@
+import { Text } from "react-native";
 import { Input } from "../Input";
 import { Label } from "../Label";
 import { FieldContent } from "./style";
+import { LabelAlert } from "../Label/style";
 
 export const BoxInput = ({
   textLabel,
@@ -13,8 +15,10 @@ export const BoxInput = ({
   maxLength,
   minLength,
   keyboardType = 'default',
-  onBlur
+  onBlur,
+  textAlert
 }) => {
+
   return(
     //FieldContent
     <FieldContent fieldWidth= {fieldWidth} >
@@ -29,7 +33,8 @@ export const BoxInput = ({
         onChangeText={onChangeText}
         keyboardType={keyboardType}
         onBlur={onBlur}
-      />
+        />
+        <LabelAlert>{textAlert}</LabelAlert>
     </FieldContent>
     
   );

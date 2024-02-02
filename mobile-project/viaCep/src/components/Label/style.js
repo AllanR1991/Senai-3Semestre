@@ -6,3 +6,6 @@ export const InputLabel = styled.Text`
   font-size: 18px;
   text-align: left;
 `
+export const LabelAlert = styled.Text`
+  color:red;
+`
