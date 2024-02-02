@@ -84,17 +84,23 @@ export function Home() {
   }
 
   useEffect(() => {
+    const api = async () => {
     try {
-      if (cep.length < 8) {
-        const endereco = axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+      if (cep.length >= 8) {
+        const endereco = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
         setRua(endereco.data.logradouro);
         setBairro(endereco.data.bairro);
         setCidade(endereco.data.localidade);
         setUf(endereco.data.uf);
       }
+
+      
     } catch (error) {
       alert(`Erro ao buscar o CEP : ${error}`);
     }
+  }
+
+    api();
   }, [cep])
 
 //   // ao carregar do componente
@@ -142,11 +148,11 @@ export function Home() {
           onChangeText={(fieldValue) => {
             setCep(fieldValue)
           }}
-          onBlur={() => {
-            alertMin(cep)
-            buscarCep(cep)
-          }
-          }
+          // onBlur={() => {
+          //   alertMin(cep)
+          //   buscarCep(cep)
+          // }
+          // }
 
           keyboardType="numeric"
         />
