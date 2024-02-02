@@ -97,6 +97,32 @@ export function Home() {
     }
   }, [cep])
 
+//   // ao carregar do componente
+//   useEffect(() => {
+
+//   }, []);//array dependências
+
+// // ao carregar do componente
+// // ao alterar do xpto
+//   useEffect(() => {
+
+//   }, [xpto]);//array dependências
+
+//   // ao carregar do componente
+// // ao alterar do xpto
+// // ao desmontar do componente
+//   useEffect(() => {
+//     return alert("fui desmontado,morri!!");
+//   }, [xpto]);//array dependências
+
+
+
+//   // ao carregar do componente
+// // loop infinito
+//   useEffect(() => {
+//     return alert("fui desmontado,morri!!");
+//   });//sem array dependências - programador esqueceu!
+
   return (
     //ScrollForm
     //ContainerForm
