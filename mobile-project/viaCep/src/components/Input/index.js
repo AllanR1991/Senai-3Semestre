@@ -8,6 +8,7 @@ export const Input = ({
   keyType,
   maxLenght,
   minLenght,
+  keyboardType
 }) => {
   return(
     <InputText
@@ -18,6 +19,7 @@ export const Input = ({
       keyType={keyType}
       maxLenght={maxLenght}
       minLenght={minLenght}
+      keyboardType={keyboardType}
     />
   );
 };

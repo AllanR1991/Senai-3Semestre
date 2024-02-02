@@ -7,11 +7,12 @@ export const BoxInput = ({
   placeholder,
   fieldWidth = 100,
   editable = false,
-  filedValue=null,
+  fieldValue=null,
   onChangeText=null,
   keyType = 'default',
-  maxLenght,
-  minLenght,
+  maxLength,
+  minLength,
+  keyboardType = 'default',
 }) => {
   return(
     //FieldContent
@@ -21,10 +22,12 @@ export const BoxInput = ({
         placeholder={placeholder}
         editable={editable}
         keyType={keyType}
-        maxLenght={maxLenght}
-        minLenght={minLenght}
-        filedValue={filedValue}
+        maxLength={maxLength}
+        minLength={minLength}
+        fieldValue={fieldValue}
         onChangeText={onChangeText}
+        keyboardType={keyboardType}
+        
       />
     </FieldContent>
     

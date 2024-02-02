@@ -1,11 +1,20 @@
+import { useState } from "react";
 import { BoxInput } from "../../components/BoxInput";
 import { ContainerForm, ScrollForm } from "./style";
+import { Alert } from "react-native";
 
 export function Home () {
 //Hooks - states
-
+const [cep, setCep] = useState("1235");
 //Hooks - effects
   //Chama da API
+
+  function buscarCep(){
+    if(cep != ""){
+      alert('dsadasdasdas');
+      
+    }
+  }
 
   return(
     //ScrollForm
@@ -16,47 +25,53 @@ export function Home () {
     <ScrollForm>
       <ContainerForm>
         <BoxInput
-          textLabel="Informe o cep"
-          placeholder="Exemplo"
-          editable= {true}
-          maxLenght= {9}
-          minLenght= {8}
+          textLabel = "Informe o cep"
+          placeholder = "Exemplo"
+          fieldValue = {cep}
+          editable = {true}
+          maxLength = {9}
+          minLength = {8}
+          onChangeText={(fieldValue) => {
+            setCep(fieldValue)
+            
+          }}
+          keyboardType="numeric"         
         />
         <BoxInput
           textLabel="Logradouro"
           placeholder="Logradouro..."                 
-          maxLenght= {50}
-          minLenght= {0}
+          maxLength= {50}
+          minLength= {0}
         />
         <BoxInput
           textLabel="Bairro"
           placeholder="Bairro..."          
-          maxLenght= {50}
-          minLenght= {0}
+          maxLength= {50}
+          minLength= {0}
         />
         <BoxInput
           textLabel="Cidade"
           placeholder="Cidade..."
-          maxLenght= {50}
-          minLenght= {0}
+          maxLength= {50}
+          minLength= {0}
         />
         <BoxInput
           textLabel="Cidade"
           placeholder="Cidade..."
-          maxLenght= {50}
-          minLenght= {0}
+          maxLength= {50}
+          minLength= {0}
         />
         <BoxInput
           textLabel="Cidade"
           placeholder="Cidade..."
-          maxLenght= {50}
-          minLenght= {0}
+          maxLength= {50}
+          minLength= {0}
         />
         <BoxInput
           textLabel="Cidade"
           placeholder="Cidade..."
-          maxLenght= {50}
-          minLenght= {0}
+          maxLength= {50}
+          minLength= {0}
         />
       </ContainerForm>
     </ScrollForm>
