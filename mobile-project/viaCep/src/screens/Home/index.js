@@ -54,6 +54,7 @@ export function Home() {
     })
   }
 
+  //Função assincrona
   async function buscarCep(valor) {
 
     //Nova variável "cep" somente com dígitos.
@@ -90,16 +91,16 @@ export function Home() {
 
         try {
           const response = await Api.get(`/${cep}/json/`)
-          //debugger
+          
+          //Percorre o objeto cepInfo obtendo chave e valor de cada item contido no objeto
           Object.entries(cepInfo).forEach(([key, value]) => {
-
+            //Procura dentro do objeto retornado pela responde.data se existe um algum valor igual a key do objeto cepInfo se tiver ele retorna
             const elementoEncontrado = Object.entries(response.data).find(([keyApi, valueApi]) => {
               if(key==keyApi){
                 return [keyApi, valueApi];
               }          
-
             });
-
+            //Verfica se elemento é igual a key e se o valor é diferente de vazio se sim ele passa o valor para oobjeto cepInfo
             if (elementoEncontrado[0] == key && elementoEncontrado[1] != "") {
               setCepInfo(prevState => ({
                 ...prevState,
@@ -109,6 +110,7 @@ export function Home() {
                 }
               }));
             }else{
+              //Habilita o editar em um campo caso a api via cep não traga nenhum valor para o campo.
               setCepInfo(prevState => ({
                 ...prevState,
                 [key]: {
@@ -120,7 +122,7 @@ export function Home() {
             }
           })
         } catch (error) {
-          alert(`Cep não encontrado`)
+          alert(`Cep não encontrado`);
         }
       } //end if.
       else {
@@ -134,14 +136,6 @@ export function Home() {
       limpa_formulário_cep();
     }
   };
-
-  const alertMin = (cep) => {
-    if (cep.length < 8 && cep != "") {
-      
-    } else {
-      setAlertLength("")
-    }
-  }
 
   // useEffect(() => {
   //   console.log("UseEffects =", cepInfo);
@@ -221,7 +215,6 @@ export function Home() {
             buscarCep(cep)
           }
           }
-
           keyboardType="numeric"
         />
         <BoxInput
