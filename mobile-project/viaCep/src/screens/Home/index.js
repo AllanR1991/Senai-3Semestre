@@ -3,7 +3,6 @@ import { BoxInput } from "../../components/BoxInput";
 import { ContainerForm, ScrollForm } from "./style";
 import Api from "../../services/api"
 
-
 export function Home() {
   //Hooks - states
   const [cep, setCep] = useState("");
