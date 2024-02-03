@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BoxInput } from "../../components/BoxInput";
 import { ContainerForm, ScrollForm } from "./style";
-import { Alert } from "react-native";
 import Api from "../../services/api"
-import axios from "axios";
+
 
 export function Home() {
   //Hooks - states
