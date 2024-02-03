@@ -120,7 +120,7 @@ export function Home() {
             }
           })
         } catch (error) {
-          alert(error)
+          alert(`Cep não encontrado`)
         }
       } //end if.
       else {
