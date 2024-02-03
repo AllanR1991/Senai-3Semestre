@@ -8,10 +8,25 @@ import axios from "axios";
 export function Home() {
   //Hooks - states
   const [cep, setCep] = useState("");
-  const [rua, setRua] = useState("");
-  const [bairro, setBairro] = useState("");
-  const [cidade, setCidade] = useState("");
-  const [uf, setUf] = useState("");
+  const [cepInfo, setCepInfo] = useState({
+    bairro:{
+      texto: '',
+      editable: false
+    },
+    logradouro: {
+      texto: '',
+      editable: false
+    },
+    localidade: {
+      texto: '',
+      editable: false
+    },
+    uf: {
+      texto: '',
+      editable: false
+    }
+  });
+  
   const [alertLength, setAlertLength] = useState("");
 
   //Hooks - effects
@@ -19,70 +34,121 @@ export function Home() {
 
   function limpa_formulário_cep() {
     //Limpa valores do formulário de cep.
-    setRua("");
-    setBairro("");
-    setCidade("");
-    setUf("");
-    setIbge("");
+    setCepInfo({
+      bairro:{
+        texto: '',
+        editable: false
+      },
+      logradouro: {
+        texto: '',
+        editable: false
+      },
+      localidade: {
+        texto: '',
+        editable: false
+      },
+      uf: {
+        texto: '',
+        editable: false
+      }
+    })
   }
 
+  async function buscarCep(valor) {
 
+    //Nova variável "cep" somente com dígitos.
+    var cep = valor.replace(/\D/g, '');
 
-  // async function buscarCep(valor) {
+    //Verifica se campo cep possui valor informado.
+    if (cep != "") {
 
-  //   //Nova variável "cep" somente com dígitos.
-  //   var cep = valor.replace(/\D/g, '');
+      //Expressão regular para validar o CEP.
+      var validacep = /^[0-9]{8}$/;
 
-  //   //Verifica se campo cep possui valor informado.
-  //   if (cep != "") {
+      //Valida o formato do CEP.
+      if (validacep.test(cep)) {
+        setAlertLength("")
+        //Preenche os campos com "..." enquanto consulta webservice.
+        setCepInfo({
+          bairro:{
+            texto: '...',
+            editable: false
+          },
+          logradouro: {
+            texto: '...',
+            editable: false
+          },
+          localidade: {
+            texto: '...',
+            editable: false
+          },
+          uf: {
+            texto: '...',
+            editable: false
+          }
+        })
 
-  //     //Expressão regular para validar o CEP.
-  //     var validacep = /^[0-9]{8}$/;
+        try {
+          const response = await Api.get(`/${cep}/json/`)
+          //debugger
+          Object.entries(cepInfo).forEach(([key, value]) => {
 
-  //     //Valida o formato do CEP.
-  //     if (validacep.test(cep)) {
+            const elementoEncontrado = Object.entries(response.data).find(([keyApi, valueApi]) => {
+              if(key==keyApi){
+                return [keyApi, valueApi];
+              }          
 
-  //       //Preenche os campos com "..." enquanto consulta webservice.
-  //       setRua("...");
-  //       setBairro("...");
-  //       setCidade("...");
-  //       setUf("...");
+            });
 
-  //       try {
-  //         const response = await Api.get(`/${cep}/json/`)
-  //         setRua(response.data.logradouro);
-  //         setBairro(response.data.bairro);
-  //         setCidade(response.data.localidade);
-  //         setUf(response.data.uf);
-
-  //       } catch (error) {
-  //         alert(error)
-  //       }
-
-
-
-  //     } //end if.
-  //     else {
-  //       //cep é inválido.
-  //       limpa_formulário_cep();
-  //       alert("Formato de CEP inválido.");
-  //     }
-  //   } //end if.
-  //   else {
-  //     //cep sem valor, limpa formulário.
-  //     limpa_formulário_cep();
-  //   }
-  // };
-
+            if (elementoEncontrado[0] == key && elementoEncontrado[1] != "") {
+              setCepInfo(prevState => ({
+                ...prevState,
+                [key]: {
+                  ...prevState[key],
+                  texto: elementoEncontrado[1]
+                }
+              }));
+            }else{
+              setCepInfo(prevState => ({
+                ...prevState,
+                [key]: {
+                  ...prevState[key],
+                  texto: elementoEncontrado[1],
+                  editable:true
+                }
+              }));
+            }
+          })
+        } catch (error) {
+          alert(error)
+        }
+      } //end if.
+      else {
+        //cep é inválido.
+        limpa_formulário_cep();
+        setAlertLength("Formato de CEP inválido.");
+      }
+    } //end if.
+    else {
+      //cep sem valor, limpa formulário.
+      limpa_formulário_cep();
+    }
+  };
 
   const alertMin = (cep) => {
     if (cep.length < 8 && cep != "") {
-      setAlertLength("Valor digitado menor que 8 digitos!!!")
+      
     } else {
       setAlertLength("")
     }
   }
 
+  // useEffect(() => {
+  //   console.log("UseEffects =", cepInfo);
+  // }, [cepInfo]);
+
+  // Código passado pelo professor
+  /*
   useEffect(() => {
     const api = async () => {
     try {
@@ -102,33 +168,36 @@ export function Home() {
 
     api();
   }, [cep])
+*/
 
-//   // ao carregar do componente
-//   useEffect(() => {
-
-//   }, []);//array dependências
-
-// // ao carregar do componente
-// // ao alterar do xpto
-//   useEffect(() => {
-
-//   }, [xpto]);//array dependências
-
-//   // ao carregar do componente
-// // ao alterar do xpto
-// // ao desmontar do componente
-//   useEffect(() => {
-//     return alert("fui desmontado,morri!!");
-//   }, [xpto]);//array dependências
-
-
-
-//   // ao carregar do componente
-// // loop infinito
-//   useEffect(() => {
-//     return alert("fui desmontado,morri!!");
-//   });//sem array dependências - programador esqueceu!
-
+  // Como Funciona o useEffects
+  /*
+    // ao carregar do componente
+    useEffect(() => {
+  
+    }, []);//array dependências
+  
+  // ao carregar do componente
+  // ao alterar do xpto
+    useEffect(() => {
+  
+    }, [xpto]);//array dependências
+  
+    // ao carregar do componente
+  // ao alterar do xpto
+  // ao desmontar do componente
+    useEffect(() => {
+      return alert("fui desmontado,morri!!");
+    }, [xpto]);//array dependências
+  
+  
+  
+  // ao carregar do componente
+  // loop infinito
+    useEffect(() => {
+      return alert("fui desmontado,morri!!");
+    });//sem array dependências - programador esqueceu!
+  */
   return (
     //ScrollForm
     //ContainerForm
@@ -148,41 +217,80 @@ export function Home() {
           onChangeText={(fieldValue) => {
             setCep(fieldValue)
           }}
-          // onBlur={() => {
-          //   alertMin(cep)
-          //   buscarCep(cep)
-          // }
-          // }
+          onBlur={() => {
+            buscarCep(cep)
+          }
+          }
 
           keyboardType="numeric"
         />
         <BoxInput
           textLabel="Logradouro"
           placeholder="Logradouro..."
-          fieldValue={rua}
+          fieldValue={cepInfo.logradouro.texto}
           maxLength={50}
           minLength={0}
+          editable={cepInfo.logradouro.editable}
+          onChangeText={(fieldValue) => {
+            setCepInfo(prevState => ({
+              ...prevState,
+              logradouro: {
+                ...prevState.logradouro,
+                texto: fieldValue
+              }
+            }));
+          }}
         />
         <BoxInput
           textLabel="Bairro"
           placeholder="Bairro..."
-          fieldValue={bairro}
+          fieldValue={cepInfo.bairro.texto}
+          editable={cepInfo.bairro.editable}
           maxLength={50}
           minLength={0}
+          onChangeText={(fieldValue) => {
+            setCepInfo(prevState => ({
+              ...prevState,
+              bairro: {
+                ...prevState.bairro,
+                texto: fieldValue
+              }
+            }));
+          }}
         />
         <BoxInput
           textLabel="Cidade"
           placeholder="Cidade..."
-          fieldValue={cidade}
+          fieldValue={cepInfo.localidade.texto}
+          editable={cepInfo.localidade.editable}
           maxLength={50}
           minLength={0}
+          onChangeText={(fieldValue) => {
+            setCepInfo(prevState => ({
+              ...prevState,
+              localidade: {
+                ...prevState.localidade,
+                texto: fieldValue
+              }
+            }));
+          }}
         />
         <BoxInput
           textLabel="UF"
           placeholder="UF..."
-          fieldValue={uf}
+          fieldValue={cepInfo.uf.texto}
+          editable={cepInfo.uf.editable}
           maxLength={50}
           minLength={0}
+          onChangeText={(fieldValue) => {
+            setCepInfo(prevState => ({
+              ...prevState,
+              uf: {
+                ...prevState.uf,
+                texto: fieldValue
+              }
+            }));
+          }}
         />
       </ContainerForm>
     </ScrollForm>
