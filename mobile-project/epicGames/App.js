@@ -84,6 +84,11 @@ const styles = StyleSheet.create({
     borderRadius: 45,
     padding: 16,
     textAlign: "center",
+    shadowColor: "blue" ,
+    shadowOffset: {width: 0, height: 5},
+    shadowOpacity: 0.2,
+    shadowRadius: 10,
+    elevation: 30
   },
   containerInput: {
     gap: 10,
