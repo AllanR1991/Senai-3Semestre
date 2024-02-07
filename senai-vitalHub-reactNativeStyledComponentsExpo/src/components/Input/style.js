@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/native";
 
 export const Input = styled.TextInput.attrs(props => ({
   placeholderTextColor: "#49B3BA"
