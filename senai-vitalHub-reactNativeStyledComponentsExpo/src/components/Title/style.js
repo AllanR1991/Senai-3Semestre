@@ -1,8 +1,9 @@
 import styled from "styled-components/native";
 
-export const Title = styled.Text`
+export const TitleStyle = styled.Text`
   font-size: 20px;
   color: #33303E;
   font-family: 'MontserratAlternates_600SemiBold';
-  margin-bottom: 5px;
+  margin-bottom: ${props => `${props.marginBottom}px`};
+  margin-top: ${props => `${props.marginTop}px`};
 `

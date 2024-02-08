@@ -1,29 +1,36 @@
-import { Image } from "react-native"
+import { Image, StatusBar } from "react-native"
 import { ButonTitle, Button, ButtonGoogle, ButtonTitleGoogle } from "../../components/Button/style"
 import { Container } from "../../components/Container/style"
-import { Input } from "../../components/Input/style"
+
 import { LinkBold, LinkMedium } from "../../components/LinkMedium/styles"
 import { Logo } from "../../components/Logo/style"
-import { Title } from "../../components/Title/style"
+
 
 import { AntDesign } from '@expo/vector-icons';
 import { ContentAccount, TextAccount } from "./style"
+import { Title } from "../../components/Title"
+import { Input } from "../../components/Input"
+
 //  https://icons.expo.fyi/Index/AntDesign/google
 
 export const Login = ({navigation}) => {
   return(
     <Container>
+      <StatusBar/>
       <Logo source={require("../../assets/Logo.png")}/>
       
-      <Title>Entrar ou criar conta</Title>
+      <Title
+        marginBottom={30}
+        text="Batata"
+      />
       
-      <Input 
+      <Input
         placeholder="Email"
       />
-      <Input 
+      {/* <Input 
         placeholder="Senha"
-        //secureTextEntry={true}
-      />
+        secureTextEntry={true}
+      /> */}
       
       <LinkMedium>Esqueceu sua Senha?</LinkMedium>
       
