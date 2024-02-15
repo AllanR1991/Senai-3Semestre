@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
 import { Container } from './src/components/Container/Container';
-import { Titulo } from './src/components/Title/Title';
+import { Titulo } from './src/components/TitleOne/TitleOne';
 import { Botao, Botao2, BotaoTeste, BotaoTeste2 } from './src/components/Button/Button';
 import { useFonts, BlackOpsOne_400Regular } from '@expo-google-fonts/black-ops-one';
 import { Lobster_400Regular } from '@expo-google-fonts/lobster';
