@@ -1,5 +1,5 @@
-import { LinearGradient } from "expo-linear-gradient";
 import styled from "styled-components/native";
+import { LinearGradient } from "expo-linear-gradient";
 
 export const Container = styled.SafeAreaView`
   flex: 1;
@@ -29,4 +29,9 @@ export const ContainerDataProfile = styled.View`
   position: relative;
   width: 100%;
   height: 30%;
+`
+export const FilterAppointment = styled.View`
+  width: 90%;
+  flex-direction: row;
+  justify-content: space-between;
 `

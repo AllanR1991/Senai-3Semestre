@@ -1,19 +1,22 @@
-import { ContainerHeader } from "../Container/style"
-import { BoxUser, DataUser, ImageUser, NameUser, TextDefault } from "./style"
+import { ContainerHeader } from "../Container/style";
+import { BoxUser, DataUser, ImageUser, NameUser, TextDefault } from "./style";
+import { MaterialIcons } from "@expo/vector-icons";
+
 
 export const Header = () => {
-  return(
-
+  return (
     <ContainerHeader>
-      <BoxUser>
-        <ImageUser />
-        <DataUser>
-          <TextDefault>Bem Vindo</TextDefault>
-          <NameUser >Dr. Richard Kosta</NameUser>
-        </DataUser>
-      </BoxUser>
-      {/* <MaterialIcons /> biblioteca */}
-    </ContainerHeader>
+        <BoxUser>
+          <ImageUser source={{ uri: "https://github.com/allar1991.png" }} />
+          <DataUser>
+            <TextDefault>Bem vindo !</TextDefault>
+            <NameUser>Dr.Enzo</NameUser>
+          </DataUser>
+        </BoxUser>
 
-  )
-}
+        {/* material icons */}
+        <MaterialIcons name="notifications" size={25} color="#fbfbfb" />
+    
+    </ContainerHeader>
+  );
+};
