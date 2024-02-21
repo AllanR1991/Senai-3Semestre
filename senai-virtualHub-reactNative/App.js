@@ -15,6 +15,7 @@ export default function App() {
     'MontserratAlternates_500Medium': require('./node_modules/@expo-google-fonts/montserrat-alternates/MontserratAlternates_500Medium.ttf'),
     'MontserratAlternates_600SemiBold': require('./node_modules/@expo-google-fonts/montserrat-alternates/MontserratAlternates_600SemiBold.ttf'),
     'MontserratAlternates_700Bold': require('./node_modules/@expo-google-fonts/montserrat-alternates/MontserratAlternates_700Bold.ttf'),
+    'Quicksand_400Regular': require('./node_modules/@expo-google-fonts/quicksand/Quicksand_400Regular.ttf'),
     'Quicksand_500Medium': require('./node_modules/@expo-google-fonts/quicksand/Quicksand_500Medium.ttf'),
     'Quicksand_600SemiBold': require('./node_modules/@expo-google-fonts/quicksand/Quicksand_600SemiBold.ttf'),
   });

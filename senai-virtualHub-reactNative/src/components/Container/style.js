@@ -22,7 +22,15 @@ export const ContainerHeader = styled(LinearGradient).attrs({
 })`
   width: 100%;
   height: 144px;
+  padding: 62px 22px;
+  padding-bottom: 22px;
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
   border-radius: 0px 0px 15px 15px;
+  box-shadow: 0px 4px 15px #00000014;
 `
 
 export const ContainerDataProfile = styled.View`
