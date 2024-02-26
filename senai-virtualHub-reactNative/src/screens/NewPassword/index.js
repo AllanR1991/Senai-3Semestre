@@ -3,7 +3,7 @@ import { BrandLogo } from "../../components/BrandLogo/style"
 import { Container, ContainerInputsBotton } from "../../components/Container/style"
 import { Input } from "../../components/Input"
 import { Title } from "../../components/Title"
-import { Button,  ButtonCancel } from "../../components/Button"
+import { Button, ButtonCancel } from "../../components/Button"
 import { Subtitle } from "../../components/Subtitle"
 
 export const NewPassword = ({ navigation }) => {
@@ -11,8 +11,8 @@ export const NewPassword = ({ navigation }) => {
     <Container>
       <StatusBar />
 
-      <ButtonCancel 
-        onPress={()=> navigation.popToTop()}
+      <ButtonCancel
+        onPress={() => navigation.popToTop()}
       />
 
       <BrandLogo />
@@ -29,11 +29,11 @@ export const NewPassword = ({ navigation }) => {
       />
 
       <ContainerInputsBotton
-        marginBottom={30}
+        $marginBottom={30}
       >
 
         <Input
-          placeholder="Nova Senha"          
+          placeholder="Nova Senha"
           secureTextEntry
         />
 

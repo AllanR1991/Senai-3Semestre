@@ -13,8 +13,8 @@ export const EmailCode = ({ navigation }) => {
     <Container>
       <StatusBar />
 
-      <ButtonCancel 
-        onPress={()=> navigation.popToTop()}
+      <ButtonCancel
+        onPress={() => navigation.popToTop()}
       />
 
       <BrandLogo />
@@ -36,15 +36,15 @@ export const EmailCode = ({ navigation }) => {
       />
 
       <ContainerInputsBotton
-        marginBottom={30}
+        $marginBottom={30}
       >
 
         <Button text="Entrar" onPress={() => navigation.navigate(NewPassword)} />
 
       </ContainerInputsBotton>
 
-      <LinkBlue 
-        
+      <LinkBlue
+
       >
         Reenviar Código
       </LinkBlue>

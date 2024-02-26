@@ -30,7 +30,7 @@ export const RecoveryPassword = ({ navigation }) => {
       />
 
       <ContainerInputsBotton
-        marginBottom={30}
+        $marginBottom={30}
       >
 
         <Input

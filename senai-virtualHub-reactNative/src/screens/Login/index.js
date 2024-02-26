@@ -1,4 +1,4 @@
-import { StatusBar} from "react-native"
+
 import { BrandLogo } from "../../components/BrandLogo/style"
 import { Container, ContainerInputsBotton } from "../../components/Container/style"
 import { Input } from "../../components/Input"
@@ -8,6 +8,7 @@ import { Button, ButtonGoogle } from "../../components/Button"
 import { RecoveryPassword } from "../RecoveryPassword"
 import { LinkGrey } from "../../components/Link/style"
 import { LinkCreateAccount } from "../../components/LinkCreateAccount"
+import { StatusBar } from "react-native"
 
 
 
@@ -15,7 +16,7 @@ import { LinkCreateAccount } from "../../components/LinkCreateAccount"
 export const Login = ({ navigation }) => {
   return (
     <Container>
-      <StatusBar />
+      <StatusBar barStyle="dark-content" backgroundColor={'#fafafa'} />
 
       <BrandLogo />
 
@@ -26,7 +27,7 @@ export const Login = ({ navigation }) => {
       />
 
       <ContainerInputsBotton
-        marginBottom={10}
+        $marginBottom={10}
       >
 
         <Input
@@ -48,8 +49,8 @@ export const Login = ({ navigation }) => {
       </LinkGrey>
 
       <ContainerInputsBotton
-        marginTop={30}
-        marginBottom={30}
+        $marginTop={30}
+        $marginBottom={30}
       >
 
         <Button

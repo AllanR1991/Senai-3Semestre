@@ -1,4 +1,5 @@
-import { ContentInputs, InputCodeStyle, InputStyle } from "./style"
+import { ContainerInputsBotton } from "../Container/style"
+import { ContentInputs, InputCodeStyle, InputDefaultStyle, InputStyle, LabelInputDefaultStyle } from "./style"
 
 export const Input = ({
   placeholder = "",
@@ -64,3 +65,15 @@ export const InputCode = ({
     </ContentInputs>
   )
 }
+
+export const InputDefault = ({
+  placeholder = { placeholder },
+  label = { label }
+}) => {
+  return (
+    <ContainerInputsBotton>
+      <LabelInputDefaultStyle>{label}</LabelInputDefaultStyle>
+      <InputDefaultStyle placeholder={placeholder} />
+    </ContainerInputsBotton>
+  );
+};
