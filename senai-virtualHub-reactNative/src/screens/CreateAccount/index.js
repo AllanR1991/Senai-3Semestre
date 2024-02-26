@@ -1,6 +1,6 @@
 import { StatusBar } from "react-native"
 import { BrandLogo } from "../../components/BrandLogo/style"
-import { Container, ContainerInputsBotton } from "../../components/Container/style"
+import { Container, ContainerInputsButton } from "../../components/Container/style"
 import { Input } from "../../components/Input"
 import { Title } from "../../components/Title"
 import { Button } from "../../components/Button"
@@ -25,7 +25,7 @@ export const CreateAccount = ({ navigation }) => {
         text="Insira seu endereço de e-mail e senha para realizar seu cadastro."
       />
 
-      <ContainerInputsBotton
+      <ContainerInputsButton
         $marginBottom={30}
       >
 
@@ -44,9 +44,9 @@ export const CreateAccount = ({ navigation }) => {
           secureTextEntry
         />
 
-      </ContainerInputsBotton>
+      </ContainerInputsButton>
 
-      <ContainerInputsBotton
+      <ContainerInputsButton
         $marginBottom={30}
       >
 
@@ -54,7 +54,7 @@ export const CreateAccount = ({ navigation }) => {
           text="Cadastrar"
         />
 
-      </ContainerInputsBotton>
+      </ContainerInputsButton>
 
       <LinkBlue
         onPress={() => navigation.popToTop()}

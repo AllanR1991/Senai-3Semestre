@@ -1,6 +1,6 @@
 
 import { BrandLogo } from "../../components/BrandLogo/style"
-import { Container, ContainerInputsBotton } from "../../components/Container/style"
+import { Container, ContainerInputsButton } from "../../components/Container/style"
 import { Input } from "../../components/Input"
 import { Title } from "../../components/Title"
 import { Button, ButtonGoogle } from "../../components/Button"
@@ -26,7 +26,7 @@ export const Login = ({ navigation }) => {
         text="Entrar ou criar conta"
       />
 
-      <ContainerInputsBotton
+      <ContainerInputsButton
         $marginBottom={10}
       >
 
@@ -40,7 +40,7 @@ export const Login = ({ navigation }) => {
           secureTextEntry={true}
         />
 
-      </ContainerInputsBotton>
+      </ContainerInputsButton>
 
       <LinkGrey
         onPress={() => navigation.navigate(RecoveryPassword)}
@@ -48,7 +48,7 @@ export const Login = ({ navigation }) => {
         Esqueceu sua senha?
       </LinkGrey>
 
-      <ContainerInputsBotton
+      <ContainerInputsButton
         $marginTop={30}
         $marginBottom={30}
       >
@@ -61,7 +61,7 @@ export const Login = ({ navigation }) => {
           text="Entrar com Google"
         />
 
-      </ContainerInputsBotton>
+      </ContainerInputsButton>
 
       <LinkCreateAccount navigation={navigation} />
     </Container>

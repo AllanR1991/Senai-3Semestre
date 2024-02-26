@@ -1,6 +1,6 @@
 import { Image, StatusBar, TouchableOpacity } from "react-native"
 import { BrandLogo } from "../../components/BrandLogo/style"
-import { Container, ContainerInputsBotton } from "../../components/Container/style"
+import { Container, ContainerInputsButton } from "../../components/Container/style"
 import { InputCode } from "../../components/Input"
 import { Title } from "../../components/Title"
 import { Button, ButtonCancel } from "../../components/Button"
@@ -35,13 +35,13 @@ export const EmailCode = ({ navigation }) => {
         marginBottom={30}
       />
 
-      <ContainerInputsBotton
+      <ContainerInputsButton
         $marginBottom={30}
       >
 
         <Button text="Entrar" onPress={() => navigation.navigate(NewPassword)} />
 
-      </ContainerInputsBotton>
+      </ContainerInputsButton>
 
       <LinkBlue
 

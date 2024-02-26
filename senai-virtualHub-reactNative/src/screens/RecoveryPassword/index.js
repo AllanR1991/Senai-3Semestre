@@ -1,6 +1,6 @@
 import { Image, StatusBar, TouchableOpacity } from "react-native"
 import { BrandLogo } from "../../components/BrandLogo/style"
-import { Container, ContainerInputsBotton } from "../../components/Container/style"
+import { Container, ContainerInputsButton } from "../../components/Container/style"
 import { Input } from "../../components/Input"
 import { Title } from "../../components/Title"
 import { Button, ButtonBack } from "../../components/Button"
@@ -29,7 +29,7 @@ export const RecoveryPassword = ({ navigation }) => {
         text="Digite abaixo seu email cadastrado que enviaremos um link para recuperação de senha"
       />
 
-      <ContainerInputsBotton
+      <ContainerInputsButton
         $marginBottom={30}
       >
 
@@ -38,16 +38,16 @@ export const RecoveryPassword = ({ navigation }) => {
           keyboardType="email-address"
         />
 
-      </ContainerInputsBotton>
+      </ContainerInputsButton>
 
-      <ContainerInputsBotton>
+      <ContainerInputsButton>
 
         <Button
           text="Continuar"
           onPress={() => navigation.navigate(EmailCode)}
         />
 
-      </ContainerInputsBotton>
+      </ContainerInputsButton>
 
 
     </Container>

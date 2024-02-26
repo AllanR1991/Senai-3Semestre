@@ -8,22 +8,33 @@ export const Container = styled.SafeAreaView`
 	background-color: #fafafa;
 `;
 
+export const ContainerScroll = styled.ScrollView``;
+
 export const ContainerProfile = styled(Container)`
 	justify-content: flex-start;
 `;
 
-interface ContainerInputsBottonProps {
+interface ContainerInputsButtonProps {
 	$marginTop?: 0;
 	$marginBottom?: 0;
 	$gap?: 0;
+	$fd?: "column";
+	$width?: 0;
 }
 
-export const ContainerInputsBotton = styled.View<ContainerInputsBottonProps>`
-	margin-top: ${({ $marginTop }) => ($marginTop ? `${$marginTop}px` : "0px")};
+export const ContainerInputsButton = styled.View<ContainerInputsButtonProps>`
+	margin-top: ${({ $marginTop }) =>
+		$marginTop != undefined ? `${$marginTop}px` : "0px"};
 	margin-bottom: ${({ $marginBottom }) =>
 		$marginBottom ? `${$marginBottom}px` : "0px"};
-	width: 90%;
-	gap: ${({ $gap }) => ($gap ? `${$gap}px` : "0px")};
+	width: ${({ $width }) => ($width != undefined ? `${$width}` : "90%")};
+	flex-direction: ${({ $fd }) => ($fd != undefined ? `${$fd}` : "column")};
+	gap: ${({ $gap }) => ($gap != undefined ? `${$gap}px` : "0px")};
+	align-items: center;
+`;
+
+export const ContainetInputsButtonMod = styled(ContainerInputsButton)`
+	align-items: flex-start;
 `;
 
 export const ContainerHeader = styled(LinearGradient).attrs({
@@ -48,6 +59,7 @@ export const ContainerDataProfile = styled.View`
 	position: relative;
 	width: 100%;
 	height: 30%;
+	z-index: 5;
 `;
 export const FilterAppointment = styled.View`
 	width: 90%;

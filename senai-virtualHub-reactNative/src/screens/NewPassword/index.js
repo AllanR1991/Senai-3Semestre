@@ -1,6 +1,6 @@
 import { StatusBar } from "react-native"
 import { BrandLogo } from "../../components/BrandLogo/style"
-import { Container, ContainerInputsBotton } from "../../components/Container/style"
+import { Container, ContainerInputsButton } from "../../components/Container/style"
 import { Input } from "../../components/Input"
 import { Title } from "../../components/Title"
 import { Button, ButtonCancel } from "../../components/Button"
@@ -28,7 +28,7 @@ export const NewPassword = ({ navigation }) => {
         text="Insira e confirme a sua nova senha"
       />
 
-      <ContainerInputsBotton
+      <ContainerInputsButton
         $marginBottom={30}
       >
 
@@ -42,15 +42,15 @@ export const NewPassword = ({ navigation }) => {
           secureTextEntry
         />
 
-      </ContainerInputsBotton>
+      </ContainerInputsButton>
 
-      <ContainerInputsBotton>
+      <ContainerInputsButton>
 
         <Button
           text="Confirmar nova senha"
         />
 
-      </ContainerInputsBotton>
+      </ContainerInputsButton>
 
 
     </Container>
