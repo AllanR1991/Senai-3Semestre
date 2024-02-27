@@ -1,13 +1,13 @@
 
-import { BrandLogo } from "../../components/BrandLogo/style"
-import { Container, ContainerInputsButton } from "../../components/Container/style"
-import { Input } from "../../components/Input"
-import { Title } from "../../components/Title"
-import { Button, ButtonGoogle } from "../../components/Button"
+import { BrandLogo } from "../../../components/BrandLogo/style"
+import { Container, ContainerInputsButton } from "../../../components/Container/style"
+import { Input } from "../../../components/Input"
+import { Title } from "../../../components/Title"
+import { Button, ButtonGoogle } from "../../../components/Button"
 
 import { RecoveryPassword } from "../RecoveryPassword"
-import { LinkGrey } from "../../components/Link/style"
-import { LinkCreateAccount } from "../../components/LinkCreateAccount"
+import { LinkGrey } from "../../../components/Link/style"
+import { LinkCreateAccount } from "../../../components/LinkCreateAccount"
 import { StatusBar } from "react-native"
 
 

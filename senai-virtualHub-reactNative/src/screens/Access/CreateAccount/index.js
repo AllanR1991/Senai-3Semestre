@@ -1,11 +1,11 @@
 import { StatusBar } from "react-native"
-import { BrandLogo } from "../../components/BrandLogo/style"
-import { Container, ContainerInputsButton } from "../../components/Container/style"
-import { Input } from "../../components/Input"
-import { Title } from "../../components/Title"
-import { Button } from "../../components/Button"
-import { Subtitle } from "../../components/Subtitle"
-import { LinkBlue } from "../../components/Link/style"
+import { BrandLogo } from "../../../components/BrandLogo/style"
+import { Container, ContainerInputsButton } from "../../../components/Container/style"
+import { Input } from "../../../components/Input"
+import { Title } from "../../../components/Title"
+import { Button } from "../../../components/Button"
+import { Subtitle } from "../../../components/Subtitle"
+import { LinkBlue } from "../../../components/Link/style"
 
 export const CreateAccount = ({ navigation }) => {
   return (

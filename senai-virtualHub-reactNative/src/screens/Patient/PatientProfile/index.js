@@ -1,9 +1,9 @@
 import { ScrollView, View } from "react-native"
-import { Container, ContainerInputsButton } from "../../components/Container/style"
-import { DataProfile } from "../../components/DataProfile"
-import { InputDefault } from "../../components/Input"
+import { Container, ContainerInputsButton } from "../../../components/Container/style"
+import { DataProfile } from "../../../components/DataProfile"
+import { InputDefault } from "../../../components/Input"
 import { StatusBar } from "expo-status-bar"
-import { Button } from "../../components/Button"
+import { Button } from "../../../components/Button"
 
 
 export const PatientProfile = ({ navigation }) => {
@@ -24,7 +24,7 @@ export const PatientProfile = ({ navigation }) => {
           </ContainerInputsButton>
 
         </ContainerInputsButton>
-        <ContainerInputsButton $marginTop={30}>
+        <ContainerInputsButton $marginTop={30} $marginBottom={30}>
           <Button
             text="Salvar"
           />

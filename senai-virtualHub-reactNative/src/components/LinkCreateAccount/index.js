@@ -1,4 +1,4 @@
-import { CreateAccount } from "../../screens/CreateAccount"
+import { CreateAccount } from "../../screens/Access/CreateAccount"
 import { LinkBlue } from "../Link/style"
 import { ContainerAccount, TextCreateAccount } from "./style"
 

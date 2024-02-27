@@ -4,7 +4,7 @@ import styled from "styled-components/native";
 
 const statusBarHeight = StatusBar.currentHeight || 0;
 
-export const ModalCancel = styled.Modal`
+export const AgendaSummary = styled.Modal`
 width:90%;
 margin: 20px;
 flex:1;
@@ -14,7 +14,7 @@ flex:1;
     align-items: 'center';
 `
 
-export const PatientModal = styled.View`
+export const SummaryModal = styled.View`
     top: ${`-${statusBarHeight}px`};
     flex: 1;
     align-items:center ;
@@ -28,4 +28,10 @@ export const ModalContent = styled.View`
     border-radius: 10px ;
     background-color: #fff ;
     align-items:center ;
+`
+
+export const TextReturnValue = styled.Text`
+    font-family: 'Quicksand_500Medium';
+    font-size: 14px;
+    color: #4E4B59;
 `

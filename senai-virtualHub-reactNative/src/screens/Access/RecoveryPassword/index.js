@@ -1,10 +1,10 @@
 import { Image, StatusBar, TouchableOpacity } from "react-native"
-import { BrandLogo } from "../../components/BrandLogo/style"
-import { Container, ContainerInputsButton } from "../../components/Container/style"
-import { Input } from "../../components/Input"
-import { Title } from "../../components/Title"
-import { Button, ButtonBack } from "../../components/Button"
-import { Subtitle } from "../../components/Subtitle"
+import { BrandLogo } from "../../../components/BrandLogo/style"
+import { Container, ContainerInputsButton } from "../../../components/Container/style"
+import { Input } from "../../../components/Input"
+import { Title } from "../../../components/Title"
+import { Button, ButtonBack } from "../../../components/Button"
+import { Subtitle } from "../../../components/Subtitle"
 import { EmailCode } from "../EmailCode"
 
 export const RecoveryPassword = ({ navigation }) => {

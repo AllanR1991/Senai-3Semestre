@@ -20,7 +20,7 @@ interface ContainerInputsButtonProps {
 	$gap?: 0;
 	$fd?: "column";
 	$width?: 0;
-	$jc?: "space-between";
+	$jc?: "space-between" | "flex-start";
 }
 
 export const ContainerInputsButton = styled.View<ContainerInputsButtonProps>`

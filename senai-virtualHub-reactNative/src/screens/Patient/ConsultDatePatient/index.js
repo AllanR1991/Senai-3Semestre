@@ -1,12 +1,14 @@
 import { StatusBar } from "expo-status-bar"
-import { Header } from "../../components/Header"
-import { CalendarHome } from "../../components/CalendarHome"
-import { AbsListAppointment } from "../../components/AbsListAppointment"
-import { Container, FilterAppointment } from "../../components/Container/style"
+import { Header } from "../../../components/Header"
+import { CalendarHome } from "../../../components/CalendarHome"
+import { AbsListAppointment } from "../../../components/AbsListAppointment"
+import { Container, FilterAppointment } from "../../../components/Container/style"
 import { useState } from "react"
-import { ListComponent } from "../../components/List/style"
-import { AppointmentCard } from "../../components/AppointmentCard"
-import { CancelationModal } from "../../components/CancelationModal"
+import { ListComponent } from "../../../components/List/style"
+import { AppointmentCard } from "../../../components/AppointmentCard"
+import { CancelationModal } from "../../../components/CancelationModal"
+import { AgendaSummaryModal } from "../../../components/AgendaSummaryModal"
+
 
 const Consultas = [
     { id: 1, nome: 'Carlos', age: 45, consulta: 'Exame', situacao: 'pendente', image: 'https://github.com/Carlos-Augusto-Roque.png' },
@@ -16,7 +18,7 @@ const Consultas = [
     { id: 5, nome: 'Eva', age: 45, consulta: 'Exame', situacao: 'cancelado', image: '' },
 ]
 
-export const Home = () => {
+export const ConsultDatePatient = (navigation) => {
 
     const [statusLista, setStatusLista] = useState("pendente");
 
@@ -29,7 +31,7 @@ export const Home = () => {
     return (
         <Container>
 
-            <StatusBar style="inverted" />
+            <StatusBar style="light" />
 
             {/* Header */}
             <Header />
@@ -69,7 +71,7 @@ export const Home = () => {
                     statusLista == item.situacao && (
                         <AppointmentCard
                             onPressCancel={() => setShowModalCancel(true)}
-                            onPressAppointment={()=> setShowAppointment(true)}
+                            onPressAppointment={() => setShowAppointment(true)}
                             nome={item.nome}
                             idade={item.age}
                             consulta={item.consulta}
@@ -80,11 +82,11 @@ export const Home = () => {
                 }
             />
 
-        <CancelationModal
-            visible={showModalCancel}
-            setShowCancel={setShowModalCancel}
-
-        />
+            <AgendaSummaryModal
+                navigation={navigation}
+                visible={showModalCancel}
+                setShowCancel={setShowModalCancel}
+            />
         </Container>
 
 

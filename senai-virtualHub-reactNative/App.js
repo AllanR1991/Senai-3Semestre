@@ -2,13 +2,14 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from "expo-font"
 import { Splash } from "./src/screens/Splash";
-import { Login } from "./src/screens/Login";
-import { RecoveryPassword } from "./src/screens/RecoveryPassword";
-import { EmailCode } from "./src/screens/EmailCode";
-import { NewPassword } from "./src/screens/NewPassword";
-import { CreateAccount } from "./src/screens/CreateAccount";
-import { PatientProfile } from "./src/screens/PatientProfile";
-import { Home } from "./src/screens/Home";
+import { Login } from "./src/screens/Access/Login";
+import { RecoveryPassword } from "./src/screens/Access/RecoveryPassword";
+import { EmailCode } from "./src/screens/Access/EmailCode";
+import { NewPassword } from "./src/screens/Access/NewPassword";
+import { CreateAccount } from "./src/screens/Access/CreateAccount";
+import { PatientProfile } from "./src/screens/Patient/PatientProfile";
+import { Home } from "./src/screens/Doctor/Home";
+import { ConsultDatePatient } from "./src/screens/Patient/ConsultDatePatient";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -29,7 +30,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="PatientProfile"
+        initialRouteName="ConsultDatePatient"
         screenOptions={{ headerShown: false }}
       >
 
@@ -71,6 +72,11 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={Home}
+        />
+
+        <Stack.Screen
+          name="ConsultDatePatient"
+          component={ConsultDatePatient}
         />
 
 

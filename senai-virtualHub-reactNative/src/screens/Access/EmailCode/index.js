@@ -1,11 +1,11 @@
 import { Image, StatusBar, TouchableOpacity } from "react-native"
-import { BrandLogo } from "../../components/BrandLogo/style"
-import { Container, ContainerInputsButton } from "../../components/Container/style"
-import { InputCode } from "../../components/Input"
-import { Title } from "../../components/Title"
-import { Button, ButtonCancel } from "../../components/Button"
-import { Subtitle } from "../../components/Subtitle"
-import { LinkBlue } from "../../components/Link/style"
+import { BrandLogo } from "../../../components/BrandLogo/style"
+import { Container, ContainerInputsButton } from "../../../components/Container/style"
+import { InputCode } from "../../../components/Input"
+import { Title } from "../../../components/Title"
+import { Button, ButtonCancel } from "../../../components/Button"
+import { Subtitle } from "../../../components/Subtitle"
+import { LinkBlue } from "../../../components/Link/style"
 import { NewPassword } from "../NewPassword"
 
 export const EmailCode = ({ navigation }) => {

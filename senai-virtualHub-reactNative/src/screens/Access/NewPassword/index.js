@@ -1,10 +1,10 @@
 import { StatusBar } from "react-native"
-import { BrandLogo } from "../../components/BrandLogo/style"
-import { Container, ContainerInputsButton } from "../../components/Container/style"
-import { Input } from "../../components/Input"
-import { Title } from "../../components/Title"
-import { Button, ButtonCancel } from "../../components/Button"
-import { Subtitle } from "../../components/Subtitle"
+import { BrandLogo } from "../../../components/BrandLogo/style"
+import { Container, ContainerInputsButton } from "../../../components/Container/style"
+import { Input } from "../../../components/Input"
+import { Title } from "../../../components/Title"
+import { Button, ButtonCancel } from "../../../components/Button"
+import { Subtitle } from "../../../components/Subtitle"
 
 export const NewPassword = ({ navigation }) => {
   return (
