@@ -18,19 +18,19 @@ export const AppointmentCard = ({
   situacao = "pendente",
   onPressCancel,
   onPressAppointment,
-  nome='',
-  idade='',
-  consulta='',
-  image='https://github.com/AllanR1991.png',
+  nome = '',
+  idade = '',
+  consulta = '',
+  image = 'https://github.com/AllanR1991.png',
 }) => {
-  let foto = (image=='' ? 'https://github.com/AllanR1991.png' : image)
+  let foto = (image == '' ? 'https://github.com/AllanR1991.png' : image)
   return (
 
 
     // container principal
     <ContainerCardsList>
       {/* imagem de perfil */}
-      <ProfileImage source={{ uri: foto  } } />
+      <ProfileImage source={{ uri: foto }} />
 
       {/* conteúdo ao lado da imagem de perfil */}
       <ContentCard>
@@ -38,8 +38,8 @@ export const AppointmentCard = ({
           <ProfileName>{nome}</ProfileName>
 
           <ProfileData>
-            <TextAge>{idade<2 ? `${idade} ano` : `${idade} anos`}</TextAge>
-            <TextBold>{consulta }</TextBold>
+            <TextAge>{idade < 2 ? `${idade} ano` : `${idade} anos`}</TextAge>
+            <TextBold>{consulta}</TextBold>
           </ProfileData>
         </DataProfileCard>
 
@@ -56,24 +56,24 @@ export const AppointmentCard = ({
             </TextBold>
           </ClockCard>
 
-            {/* valida e mostra o tipo de botão conforme a situação */}
+          {/* valida e mostra o tipo de botão conforme a situação */}
 
-            {
-                situacao == "cancelado" ? (
-                    <>
-                    </>
-                ) : situacao == "pendente" ? (
-                    <ButtonCard onPress={onPressCancel}>
-                        <ButtonText situacao={situacao}>Cancelar</ButtonText>
-                    </ButtonCard>
-                ) : (
-                    <ButtonCard onPress={onPressAppointment}>
-                        <ButtonText situacao={situacao}>Ver Prontuário</ButtonText>
-                    </ButtonCard>
-                )
-            }
+          {
+            situacao == "cancelado" ? (
+              <>
+              </>
+            ) : situacao == "pendente" ? (
+              <ButtonCard onPress={onPressCancel}>
+                <ButtonText situacao={situacao}>Cancelar</ButtonText>
+              </ButtonCard>
+            ) : (
+              <ButtonCard onPress={onPressAppointment}>
+                <ButtonText situacao={situacao}>Ver Prontuário</ButtonText>
+              </ButtonCard>
+            )
+          }
 
-          
+
         </ViewRow>
       </ContentCard>
     </ContainerCardsList>

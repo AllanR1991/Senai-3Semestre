@@ -10,6 +10,7 @@ import { CreateAccount } from "./src/screens/Access/CreateAccount";
 import { PatientProfile } from "./src/screens/Patient/PatientProfile";
 import { Home } from "./src/screens/Doctor/Home";
 import { ConsultDatePatient } from "./src/screens/Patient/ConsultDatePatient";
+import { ConsultClinc } from "./src/screens/Patient/ConsultClinic";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -30,7 +31,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="ConsultDatePatient"
+        initialRouteName="ConsultClinc"
         screenOptions={{ headerShown: false }}
       >
 
@@ -77,6 +78,11 @@ export default function App() {
         <Stack.Screen
           name="ConsultDatePatient"
           component={ConsultDatePatient}
+        />
+
+        <Stack.Screen
+          name="ConsultClinc"
+          component={ConsultClinc}
         />
 
 
