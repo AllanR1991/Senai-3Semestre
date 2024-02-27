@@ -20,6 +20,7 @@ interface ContainerInputsButtonProps {
 	$gap?: 0;
 	$fd?: "column";
 	$width?: 0;
+	$jc?: "space-between";
 }
 
 export const ContainerInputsButton = styled.View<ContainerInputsButtonProps>`
@@ -31,6 +32,7 @@ export const ContainerInputsButton = styled.View<ContainerInputsButtonProps>`
 	flex-direction: ${({ $fd }) => ($fd != undefined ? `${$fd}` : "column")};
 	gap: ${({ $gap }) => ($gap != undefined ? `${$gap}px` : "0px")};
 	align-items: center;
+	justify-content: ${({ $jc }) => $jc};
 `;
 
 export const ContainetInputsButtonMod = styled(ContainerInputsButton)`
@@ -59,6 +61,7 @@ export const ContainerDataProfile = styled.View`
 	position: relative;
 	width: 100%;
 	height: 30%;
+	min-height: 256px;
 	z-index: 5;
 `;
 export const FilterAppointment = styled.View`
