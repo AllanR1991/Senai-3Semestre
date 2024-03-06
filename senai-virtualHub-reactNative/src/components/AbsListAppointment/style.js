@@ -1,35 +1,26 @@
-import styled, { css } from 'styled-components/native';
+import styled, { css } from 'styled-components'
 
 export const ButtonTabsStyle = styled.TouchableHighlight`
-  padding: 12px 14px;
-  border-radius: 5px;
+    padding: 12px 14px;
+    border-radius: 5px;
 
-  /* Se o botao estiver clicado, aplica-se o fundo azul, caso contrario fundo transparente. */
-  
-  ${props => props.clickButton ?
-    css`
-      background-color: #496bba;
-  `
-    :
-    css`
-      background-color: transparent;
-      border: 2px solid #607ec5;
-  `}
-
+    /* Se o botao estiver clicado, aplica o fundo azul. Caso contrario, o fundo trasparente */
+    ${props => props.clickButton ? css`
+        background-color: #496BBA;
+    ` : css`
+        background-color: transparent;
+        border: 2px solid #607EC5;
+    `}
 `
 
-export const ButtonTexStyle = styled.Text`
-  font-size: 12px;
-  font-family: 'MontserratAlternates_600SemiBold';
-  
-  /* Se o botao estiver clicado, aplica-se o fundo azul, caso contrario fundo transparente. */
-
-  ${props => props.clickButton ?
-    css`
-      color: #FBFBFB;
-  `
-    :
-    css`
-      color: #607ec5;
-  `}
+export const ButtonTextStyle = styled.Text`
+    font-size: 12px;
+    font-family: MontserratAlternates_600SemiBold;
+    
+    /* Se click button for true, a cor sera branca. Se nao, sera azul */
+    ${props => props.clickButton ? css`
+        color: #FBFBFB;
+    ` : css`
+        color: #607EC5;
+    `}
 `

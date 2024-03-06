@@ -1,47 +1,70 @@
-import styled from "styled-components/native";
+import styled from "styled-components";
 
-export const ButtonStyle = styled.TouchableOpacity`
-  flex-direction: row;
-  width: 100%;
-  border-radius: 5px;
-  padding: 12px 8px;
-  gap: 27px;
-  background-color: #496BBA;
-  align-items: center;
-  justify-content: center;
+export const ButtonLogin = styled.TouchableOpacity`
+    background-color: #496BBA;
+    width: 90%;
+    height: 44px;
+    border-radius: 5px;
+    margin-top: 15px;
+
+    align-items: center;
+    justify-content: center;
+    border: #496BBA;
 `
 
-export const TextButtonStyle = styled.Text`
-  font-family: 'MontserratAlternates_700Bold';
-  font-size: 18px;
-  color: #FFF;
-  text-transform: uppercase;
+export const ButtonLoginVE = styled(ButtonLogin)`
+    margin-top: 30px;
+    margin-bottom: 27px;
 `
 
-export const ButtonGoogleStyle = styled(ButtonStyle)`
-  background-color: #FAFAFA;
-  border: 1px solid #496BBA;
+export const ButtonEdit = styled(ButtonLogin)`
+    margin-top: 30px;
+    width: 100%;
+`
+export const ButtonSendProfile = styled(ButtonLogin)`
+    width: 53.7%;
+    background-color: #49B3BA;
+    border: none;
+    flex-direction: row;
+    gap: 10px;
+    margin: 0px;
 `
 
-export const TextButtonGoogleStyle = styled(TextButtonStyle)`
-  color: #496BBA;
+export const ButtonLeave = styled(ButtonLogin)`
+    margin-top: 30px;
+    width: 59%;
+    background-color: #ACABB7;
+    border: none;
 `
 
-export const ButtomCircleStyle = styled.TouchableOpacity`
-  position: absolute;
-  top: 5%;
-  left: 5%;
-  padding: 8px;
+export const ButtonSchedule = styled(ButtonLoginVE)`
+    width: 100%;
+    margin-bottom: 30px;
 `
 
-export const ImageBackStyle = styled.Image.attrs({
-  source: require('../../assets/images/ButtonBack.png')
-})`
-  width: 30px;
-  height: 30px;
+export const ButtonModal = styled(ButtonLoginVE)`
+    width: 285px;
 `
-export const ImageCancelStyle = styled(ImageBackStyle).attrs({
-  source: require('../../assets/images/ButtomCancel.png')
-})`
 
+export const ButtonCancel = styled.TouchableOpacity`
+   width: 100%;
+   align-items: center;
+`
+
+export const ButtonCancelProfile = styled.TouchableOpacity`
+    width: 50%;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+`
+
+export const ButtonBox = styled(ButtonCancel)`
+    margin-bottom: 23px;
+`
+
+export const ButtonGoogle = styled(ButtonLogin)`
+    background-color: white;
+    border: 1px solid #496BBA;
+    flex-direction: row;
+    gap: 27px;
 `
