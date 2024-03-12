@@ -9,16 +9,16 @@ import {
 } from 'expo-location'
 import { View } from 'react-native'
 
-export const Map = ({navigation}) => {
+export const MapLocation = ({navigation}) => {
 
 
-    const clinica = [{ latitude:-23.69831073189791, longitude: -46.5473883224051}]
+    const clinica = [{ latitude:-23.6983, longitude: -46.5473}]
     // Criando UseState para setar localização inicial e destino.9
     // Destino deve ser passado como props pois cada clinica tem um destino.
     const [initialPosition, setInitialPosition] = useState(null);
     const [finalPosition, setFinalPosition] = useState({
         latitude: clinica[1].latitude ,
-        longitude: clinica[1].latitude 
+        longitude: clinica[1].longitude 
     })
 
     // Captura Localização
@@ -29,6 +29,9 @@ export const Map = ({navigation}) => {
         if(granted){
             // Se permissao for autorizada obtemos a localização atual.
             const captureLocation = await getCurrentPositionAsync();
+
+            // Define a localizaçao inicial
+            setInitialPosition(captureLocation);
         }
     }
 

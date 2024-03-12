@@ -52,14 +52,16 @@ export default function App() {
 
     //Envolve a estrutura de navegacao
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        initialRouteName='Navegacao'
+      >
 
 
-        {/* <Stack.Screen
+        <Stack.Screen
           name='Navegacao'
           component={Navegation}
           options={{title:'Navegacao'}}
-        /> */}
+        />
 
         <Stack.Screen
           name='Login'

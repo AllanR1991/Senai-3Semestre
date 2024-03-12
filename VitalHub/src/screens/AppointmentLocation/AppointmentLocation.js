@@ -5,14 +5,17 @@ import { Container, DoubleContentBox, SmallBox } from "../../components/containe
 import { InputGrey } from "../../components/input/styled"
 import { LabelLocal, SubtextCard, SubtextLocal, TitleProfile, TitleTextInfo } from "../../components/title/style"
 import { AddressBox, AlignButton, ContainerBackground, ContentAL, MapImage } from "./Style"
+import { MapLocation } from "../../components/MapLocation"
 
 export const AppointmentLocation = ({navigation}) => {
     return(
         <Container>
 
-            <MapImage
+            {/* <MapImage
                 source={require('../../assets/mapImage.jpg')}
-            />
+            /> */}
+
+            <MapLocation/>
 
             <ContainerBackground>
                 <ContentAL>
