@@ -1,20 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 import {
-  requestForegroundPermissionsAsync, //Solicita o acesso a localização
-  getCurrentPositionAsync //recebe a localização atual
+  requestForegroundPermissionsAsync, // Solicita o acesso a localização
+  getCurrentPositionAsync, // recebe a localização atual
+  watchPositionAsync,
+  LocationAccuracy
 } from 'expo-location';
 
 import MapViewDirections from 'react-native-maps-directions';
 
 // importando dependencia do mapa
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { mapskey } from './utils/mapsApiKey';
 
 export default function App() {
 
+  const mapReference = useRef(null);
+
   const [initialPosition, setInitialPosition] = useState(null)
+  const [finalPosition, setFinalPosition] = useState({
+    latitude: - 23.206,
+    longitude: -46.7836
+  })
 
   async function CapturarLocalizacao() {
     const { granted } = await requestForegroundPermissionsAsync();
@@ -27,7 +35,51 @@ export default function App() {
 
   useEffect(() => {
     CapturarLocalizacao()
-  }, [])
+    //Monitora em tempo real
+    watchPositionAsync(
+      {
+        accuracy: LocationAccuracy.Highest,
+        timeInterval: 1000,
+        distanceInterval : 1,
+
+      },
+      async (response) => {
+        // recebe e guarda a nova localização
+        await setInitialPosition( response )
+
+        // mapReference.current?.animateCamera({
+        //   pitch :60,
+        //   center : response.coords
+        // })
+        console.log(response)
+      }
+    )
+
+  }, [1000])
+
+  useEffect(() => {
+    RecarregarVisualizacaoMapa()
+  }, [initialPosition])
+
+  async function RecarregarVisualizacaoMapa() {
+    if (mapReference.current && initialPosition) {
+      await mapReference.current.fitToCoordinates(
+        [{
+          latitude: initialPosition.coords.latitude,
+          longitude: initialPosition.coords.longitude
+        },
+        {
+          latitude: finalPosition.latitude,
+          longitude: finalPosition.longitude
+        }],
+        {
+          /* Obrigatorio passar dessa forma os parametros */
+          edgePadding: { top : 60, right : 60, bottom : 60, left : 60 },
+          animated: true
+        }
+      )
+    }
+  }
 
   return (
     <View style={styles.container}>
@@ -35,6 +87,7 @@ export default function App() {
         //Necessario a validação pois nao 
         initialPosition != null ?
           <MapView
+            ref={mapReference}
             // Marcar ponto de inicio
             initialRegion={{
               latitude: initialPosition.coords.latitude,
@@ -60,7 +113,17 @@ export default function App() {
               description='Estou aqui'
               pinColor='blue'
             />
-
+            <Marker
+              coordinate={{
+                latitude: -23.5329,
+                longitude: -46.7926,
+                latitudeDelta: 0.005,
+                longitudeDelta: 0.005,
+              }}
+              title='Posição Inicial'
+              description='Estou aqui'
+              pinColor='blue'
+            />
             <MapViewDirections
               origin={initialPosition.coords}
               destination={{
@@ -72,19 +135,6 @@ export default function App() {
               strokeWidth={5}
               strokeColor='#496BBA'
               apikey={mapskey}
-            />
-
-
-            <Marker
-              coordinate={{
-                latitude: -23.5329,
-                longitude: -46.7926,
-                latitudeDelta: 0.005,
-                longitudeDelta: 0.005,
-              }}
-              title='Posição Inicial'
-              description='Estou aqui'
-              pinColor='blue'
             />
           </MapView>
           :
@@ -331,3 +381,5 @@ const grayMapStyle = [
     ],
   },
 ];
+
+
