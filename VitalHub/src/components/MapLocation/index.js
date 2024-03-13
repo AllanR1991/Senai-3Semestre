@@ -2,8 +2,9 @@
 
 import Mapview, 
       { Maker,
+        Marker,
         PROVIDER_GOOGLE } from 'react-native-maps'
-        
+
 import { useEffect, useRef, useState } from "react"
 
 import {
@@ -84,7 +85,7 @@ export const MapLocation = ({ navigation }) => {
           latitude: finalPosition.latitude,
           longitude: finalPosition.longitude,
         }], {
-        edgePadding: { top: 60, rigth: 60, bottom: 60, left: 60 },
+        edgePadding: { top: 60, right: 60, bottom: 60, left: 60 },
         animated: true,
       })
     }
