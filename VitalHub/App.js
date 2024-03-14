@@ -29,6 +29,7 @@ import { EditProfile } from './src/screens/EditProfile/EditProfile';
 import { EditMedicalRecord } from './src/screens/EditMedicalRecord/EditMedicalRecord';
 import { Main } from './src/screens/Main/Main';
 import { ScheduleModal } from './src/components/ScheduleModal/ScheduleModal';
+import CaptureCam from './src/screens/CaptureCam';
 
 export default function App() {
 
@@ -53,7 +54,7 @@ export default function App() {
     //Envolve a estrutura de navegacao
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName='Navegacao'
+        initialRouteName='CaptureCam'
       >
 
 
@@ -150,6 +151,12 @@ export default function App() {
           component={ScheduleModal}
           options={{title:'Agendar consulta'}}
         />
+        <Stack.Screen
+          name='CaptureCam'
+          component={CaptureCam}
+          options={{title:'Catptura Camera'}}
+        />
+        
         
       </Stack.Navigator>
     </NavigationContainer>
