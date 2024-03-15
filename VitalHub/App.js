@@ -54,7 +54,7 @@ export default function App() {
     //Envolve a estrutura de navegacao
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName='CaptureCam'
+        initialRouteName='EditMedicalRecord'
       >
 
 

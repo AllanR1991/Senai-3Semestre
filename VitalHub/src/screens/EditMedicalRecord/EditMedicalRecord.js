@@ -1,4 +1,4 @@
-import { ScrollView } from "react-native"
+import { Image, ScrollView } from "react-native"
 import { AlignContainer, Container } from "../../components/container/style"
 import { ImageProfile } from "../../components/images/style"
 import { ButtonTitle, InfoTextProfile, LabelLocal, ProfileName, TextPhoto } from "../../components/title/style"
@@ -12,7 +12,10 @@ import { ButtonBox, ButtonCancel, ButtonCancelProfile, ButtonEdit, ButtonSendPro
 import { LinkCancel, LinkCancelProfile } from "../../components/Links/style"
 import { AlignButton, AlingnButtonProfile } from "../AppointmentLocation/Style"
 
-export const EditMedicalRecord = ({navigation}) => {
+
+export const EditMedicalRecord = ({navigation , route}) => {
+
+    console.log(route.params?.foto)
     return(
         <ScrollContainer>
 
@@ -66,11 +69,13 @@ export const EditMedicalRecord = ({navigation}) => {
                         <ContainerPhoto>
                             <AntDesign name="exclamationcircle" size={20} color="#4E4B59" />
                             <TextPhoto>Nenhuma foto informada</TextPhoto>
+                            {route.params?.foto && <Image source={{ uri: route.params.foto }} />}
                         </ContainerPhoto>
                     </InputProfileBox>
 
                     <DoubleContentBoxEP>
-                        <ButtonSendProfile>
+                        <ButtonSendProfile onPress={()=>{navigation.navigate('CaptureCam')}}>
+                        
                             <MaterialCommunityIcons name="camera-plus-outline" size={24} color="white" />
                             <ButtonTitle>Enviar</ButtonTitle>
                         </ButtonSendProfile>
