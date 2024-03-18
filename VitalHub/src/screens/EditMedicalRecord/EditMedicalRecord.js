@@ -69,7 +69,7 @@ export const EditMedicalRecord = ({navigation , route}) => {
                         <ContainerPhoto>
                             <AntDesign name="exclamationcircle" size={20} color="#4E4B59" />
                             <TextPhoto>Nenhuma foto informada</TextPhoto>
-                            {route.params?.foto && <Image source={{ uri: route.params.foto }} />}
+                            {route.params?.foto && <Image source={{ uri: route.params.foto }} style={{width:'100%', height:111}} />}
                         </ContainerPhoto>
                     </InputProfileBox>
 
